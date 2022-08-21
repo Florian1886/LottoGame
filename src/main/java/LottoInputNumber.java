@@ -3,13 +3,19 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class LottoInputNumber {
+
+    public Set<Integer> getUserNumbers(){
+        Scanner scanner = new Scanner(System.in);
+        Set<Integer> numberFromUser = getSixNumbers(scanner);
+        scanner.close();
+        return numberFromUser;
+    }
 //zmienic na private
-    public Set<Integer> getSixNumbers(Scanner in){
+    private Set<Integer> getSixNumbers(Scanner in){
         final Set<Integer> numberFromUser = new HashSet<>();
         System.out.println("Wpisz liczby");
         while(isSixNumbersFromUser(numberFromUser)){
             System.out.println("Wpisz liczbę");
-            while(!in.hasNextInt()){};
             int intNumber = in.nextInt();
             checkNumber(numberFromUser ,intNumber);
         }
