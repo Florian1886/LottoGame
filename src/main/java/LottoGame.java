@@ -15,8 +15,10 @@ public class LottoGame {
         System.out.println(userNumbers);
         System.out.println("Generator");
         System.out.println(randomNumbers);
-        LottoIfWinner lottoIfWinner = new LottoIfWinner();
-        boolean areTheSame = lottoIfWinner.checkIfWon(userNumbers, randomNumbers);
+        LottoResult lottoResult = new LottoResult();
+        boolean areTheSame = lottoResult.checkIfWon(userNumbers, randomNumbers);
+        Set<Integer> hitNumbers = lottoResult.whichCorrect(userNumbers, randomNumbers);
         System.out.println(areTheSame);
+        System.out.println(hitNumbers);
     }
 }
