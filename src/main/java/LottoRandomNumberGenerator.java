@@ -1,6 +1,7 @@
-import java.security.SecureRandom;
+
+import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class LottoRandomNumberGenerator {
 
@@ -8,9 +9,16 @@ public class LottoRandomNumberGenerator {
     }
 
     public Set<Integer> getRandomNumbers(){
-        SecureRandom random = new SecureRandom();
-        return random.ints(6, 1, 40)
-                .boxed()
-                .collect(Collectors.toSet());
+        Set<Integer> randomSet = new HashSet<>();
+        Random rand = new Random();
+        while(isSixNumbersRandom(randomSet)){
+            randomSet.add(rand.nextInt(0,40));
+        }
+        return randomSet;
     }
+
+    private boolean isSixNumbersRandom(Set<Integer> numberFromUser) {
+        return numberFromUser.size()<6;
+    }
+
 }

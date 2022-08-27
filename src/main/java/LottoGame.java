@@ -14,11 +14,9 @@ public class LottoGame {
         Message.showYourNumbers(userNumbers);
         Message.showRandomNumbers(randomNumbers);
 
-        LottoResult lottoResult = new LottoResult();
-        boolean areTheSame = lottoResult.checkIfWon(userNumbers, randomNumbers);
-        Set<Integer> hitNumbers = lottoResult.whichCorrect(userNumbers, randomNumbers);
+        LottoResult lottoResult = new LottoResult(userNumbers, randomNumbers);
 
-        System.out.println(areTheSame);
-        System.out.println(hitNumbers);
+        System.out.println(lottoResult.isIfWon());
+        System.out.println(lottoResult.getHitNumbers());
     }
 }
