@@ -3,7 +3,7 @@ import java.util.Set;
 public class LottoGame {
 
     public static void main(String[] args) {
-        MessageStart.start();
+        Message.start();
 
         LottoInputNumber lottoInputNumber = new LottoInputNumber();
         final Set<Integer> userNumbers = lottoInputNumber.getUserNumbers();
@@ -11,13 +11,13 @@ public class LottoGame {
         LottoRandomNumberGenerator lottoRandomNumberGenerator = new LottoRandomNumberGenerator();
         final Set<Integer> randomNumbers = lottoRandomNumberGenerator.getRandomNumbers();
 
-        System.out.println("Twoje numery");
-        System.out.println(userNumbers);
-        System.out.println("Generator");
-        System.out.println(randomNumbers);
+        Message.showYourNumbers(userNumbers);
+        Message.showRandomNumbers(randomNumbers);
+
         LottoResult lottoResult = new LottoResult();
         boolean areTheSame = lottoResult.checkIfWon(userNumbers, randomNumbers);
         Set<Integer> hitNumbers = lottoResult.whichCorrect(userNumbers, randomNumbers);
+
         System.out.println(areTheSame);
         System.out.println(hitNumbers);
     }

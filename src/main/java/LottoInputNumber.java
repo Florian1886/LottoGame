@@ -10,12 +10,10 @@ public class LottoInputNumber {
         scanner.close();
         return numberFromUser;
     }
-//zmienic na private
     private Set<Integer> getSixNumbers(Scanner in){
         final Set<Integer> numberFromUser = new HashSet<>();
-        System.out.println("Wpisz liczby");
         while(isSixNumbersFromUser(numberFromUser)){
-            System.out.println("Wpisz liczbę");
+            Message.addNumber();
             int intNumber = in.nextInt();
             checkNumber(numberFromUser ,intNumber);
         }
@@ -30,7 +28,7 @@ public class LottoInputNumber {
         if(isInRange(intNumber)){
             numberFromUser.add(intNumber);
         }else{
-            System.out.println("Nie w zasięgu");
+            Message.errorNotInBound();
         }
     }
 
