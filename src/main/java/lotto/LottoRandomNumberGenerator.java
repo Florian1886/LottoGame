@@ -4,8 +4,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 public class LottoRandomNumberGenerator {
-
-  LottoRandomNumberGenerator() {
+  public LottoRandomNumberGenerator() {
   }
 
   public Set<Integer> getRandomNumbers() {

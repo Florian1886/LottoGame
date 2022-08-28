@@ -1,4 +1,9 @@
-package lotto;
+package game;
+
+import lotto.LottoInputNumber;
+import lotto.LottoRandomNumberGenerator;
+import lotto.LottoResult;
+import lotto.Message;
 
 import java.util.Set;
 
@@ -17,8 +22,5 @@ public class LottoGame {
     Message.showRandomNumbers(randomNumbers);
 
     LottoResult lottoResult = new LottoResult(userNumbers, randomNumbers);
-
-    System.out.println(lottoResult.isIfWon());
-    System.out.println(lottoResult.getHitNumbers());
   }
 }

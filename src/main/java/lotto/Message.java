@@ -3,7 +3,7 @@ package lotto;
 import java.util.Set;
 
 
-class Message {
+public class Message {
 
 
   public static void start() {
@@ -19,11 +19,20 @@ class Message {
 
   }
 
-  public static void addNumber() {
+  static void addNumber() {
     System.out.println("Insert a number");
   }
 
-  public static void errorNotInBound() {
+  static void errorNotInBound() {
     System.out.println("Not in bound");
+  }
+
+  static void correctHitNumbers(Set<Integer> hitNumbers) {
+    System.out.println("You hit the numbers: " + hitNumbers);
+  }
+
+  static void ifAllHit(String ifWon) {
+    System.out.println("Did you guess all the numbers?: " + ifWon
+    );
   }
 }

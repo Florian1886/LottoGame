@@ -5,30 +5,24 @@ import java.util.Set;
 
 public class LottoResult {
 
-  private final boolean ifWon;
-  private final Set<Integer> hitNumbers;
 
   public LottoResult(final Set<Integer> userNumbers, final Set<Integer> randomNumbers) {
-    this.ifWon = this.checkIfWon(userNumbers, randomNumbers);
-    this.hitNumbers = this.checkCorrect(userNumbers, randomNumbers);
+    this.checkIfWon(userNumbers, randomNumbers);
+    this.checkCorrect(userNumbers, randomNumbers);
   }
 
-  private boolean checkIfWon(final Set<Integer> userNumbers, final Set<Integer> randomNumbers) {
-    return userNumbers.contains((randomNumbers));
+  private void checkIfWon(final Set<Integer> userNumbers, final Set<Integer> randomNumbers) {
+    if(userNumbers.contains((randomNumbers))){
+      Message.ifAllHit("Yes");
+    } else {
+      Message.ifAllHit("No");
+    }
   }
 
 
-  public Set<Integer> checkCorrect(final Set<Integer> userNumbers, final Set<Integer> randomNumbers) {
+  private void checkCorrect(final Set<Integer> userNumbers, final Set<Integer> randomNumbers) {
     Set<Integer> hitNumbers = new HashSet<>(userNumbers);
     hitNumbers.retainAll(randomNumbers);
-    return hitNumbers;
-  }
-
-  public boolean isIfWon() {
-    return ifWon;
-  }
-
-  public Set<Integer> getHitNumbers() {
-    return hitNumbers;
+    Message.correctHitNumbers(hitNumbers);
   }
 }
