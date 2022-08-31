@@ -1,4 +1,4 @@
-package lotto;
+package lottoapp.game.config;
 
 public class Config {
 

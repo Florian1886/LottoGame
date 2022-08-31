@@ -1,4 +1,6 @@
-package lotto;
+package lottoapp.game.logic;
+
+import lottoapp.game.config.Config;
 
 import java.util.HashSet;
 import java.util.Random;

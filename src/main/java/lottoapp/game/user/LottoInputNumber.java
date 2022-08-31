@@ -1,4 +1,7 @@
-package lotto;
+package lottoapp.game.user;
+
+import lottoapp.game.config.Config;
+import lottoapp.game.message.Message;
 
 import java.util.HashSet;
 import java.util.Scanner;
